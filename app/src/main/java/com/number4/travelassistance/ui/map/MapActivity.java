@@ -76,6 +76,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private GoogleApiClient googleApiClient;
+    private int countMarker = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,7 +225,18 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         googleMap.addMarker(new MarkerOptions()
                 .position(hvktmm)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                 .title("Học viện Kỹ thuật Mật Mã"));
+        googleMap.setOnMapLongClickListener(view -> {
+            countMarker += 1;
+            if (countMarker >= 3) {
+                googleMap.clear();
+                countMarker = 0;
+            }
+            googleMap.addMarker(new MarkerOptions().position(view).draggable(false));
+
+        });
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, Const.REQUEST_PERMISSION_LOCATION);
         } else {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CityActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/imgCityDetail"/>
+    <TextView
+        android:id="@+id/txtNameOfCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/imgCityDetail"
+        app:layout_constraintStart_toStartOf="@id/imgCityDetail"
+        android:layout_marginLeft="@dimen/padding5dp"
+        android:layout_marginBottom="@dimen/padding5dp"
+        tools:text="Name"
+        android:textSize="25sp"
+        android:textColor="#F4F4F4"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLocation"
+        app:layout_constraintTop_toBottomOf="@id/imgCityDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/location"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+<!--    <fragment-->
+<!--        android:layout_marginTop="@dimen/padding5dp"-->
+<!--        android:id="@+id/weather_fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btnLocation"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_height="100dp" />-->
+
+    <ListView
+        android:id="@+id/lisviewlocationofcity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="@dimen/padding5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

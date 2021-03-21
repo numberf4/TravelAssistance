@@ -47,7 +47,6 @@ public class CityActivity extends AppCompatActivity {
     int id = 0;
     String NameofCity = "";
     String ImgofCity = "";
-    String Location = "";
 
     int page = 1;
 
@@ -55,7 +54,7 @@ public class CityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
-        anhxa();
+        init();
         city city = (city) getIntent().getSerializableExtra(CityAdapter.key);
         id = city.getId();
         NameofCity = city.getNameCity();
@@ -133,7 +132,7 @@ public class CityActivity extends AppCompatActivity {
 
     }
 
-    private void anhxa() {
+    private void init() {
         txtNameofCity = findViewById(R.id.txtNameOfCity);
         imgofCiTy = findViewById(R.id.imgCityDetail);
 

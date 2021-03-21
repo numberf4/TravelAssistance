@@ -37,12 +37,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.clContainer,homeFragment).commit();
         fragmentManager.beginTransaction().add(R.id.clContainer,mapFragment).hide(mapFragment).commit();
         fragmentManager.beginTransaction().add(R.id.clContainer,notesFragment).hide(notesFragment).commit();
-//        getSupportFragmentManager().beginTransaction().add(R.id.recyclerViewListCity,notesFragment).hide(notesFragment).commit();
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_map, R.id.navigation_notes)
-//                .build();
         activeFragment = homeFragment;
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_map:
                         Intent intent = new Intent(MainActivity.this, MapActivity.class);
                         startActivity(intent);
-//                    case R.id.navigation_notes:
-//                        fragmentManager.beginTransaction().hide(activeFragment).show(notesFragment).commit();
-//                        return true;
+                        return true;
+                    case R.id.navigation_notes:
+                        fragmentManager.beginTransaction().hide(activeFragment).show(notesFragment).commit();
+                        return true;
                 }
                 return false;
             }

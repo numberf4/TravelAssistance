@@ -1,11 +1,11 @@
-<resources>
+﻿<resources>
     <string name="app_name">Travel Assistance</string>
     <string name="title_home">Home</string>
     <string name="title">Most Popular Cities</string>
 
     <string name="title_map">Map</string>
     <string name="title_notes">Notes</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDBHnz3DrH0ptZcFDJ5YaDPOSoyB5N9Y1A</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyChv4cF5PISI3F1bileAImUUumvWqGeP7c</string>
     <string name="location">Vị trí</string>
 
 </resources>

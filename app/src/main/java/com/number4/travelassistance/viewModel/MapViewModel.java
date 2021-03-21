@@ -15,13 +15,39 @@ public class MapViewModel extends ViewModel {
         return lifecycleOwner;
     }
 
-    private MutableLiveData<Boolean> isPickSearch = new MutableLiveData<Boolean>(false);
-
+    public MutableLiveData<Boolean> isPickSearch = new MutableLiveData<Boolean>(false);
+    public MutableLiveData<Boolean> isPickDestination = new MutableLiveData<Boolean>(false);
+    public MutableLiveData<Boolean> isShowPath = new MutableLiveData<Boolean>(false);
     public MutableLiveData<Boolean> getIsPickSearch() {
         return isPickSearch;
     }
-     public void changeStatusIsPick(){
+    public MutableLiveData<Boolean> getIsPickDestination() {
+        return isPickDestination;
+    }
+
+    public void setIsPickDestination(Boolean isPickDestination) {
+        this.isPickDestination.postValue(isPickDestination);
+    }
+
+    public void setIsShowPath(Boolean isShowPath) {
+        this.isShowPath.postValue(isShowPath);
+    }
+
+    public MutableLiveData<Boolean> getIsShowPath() {
+        return isShowPath;
+    }
+
+    public void setIsPickSearch(Boolean isPickSearch) {
+        this.isPickSearch.postValue(isPickSearch);
+    }
+
+    public void changeStatusIsPick() {
         Boolean value = getIsPickSearch().getValue();
         this.isPickSearch.postValue(!value);
+    }
+
+    public void changeStatusIsPickDes() {
+        Boolean value2 = getIsPickDestination().getValue();
+        this.isPickDestination.postValue(!value2);
     }
 }
